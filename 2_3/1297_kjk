@@ -1,0 +1,17 @@
+#include <string>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+
+int main()
+{
+    float wRate, hRate, diaLen;
+    cin >> diaLen >> hRate >> wRate;
+    float w = wRate * diaLen/sqrt((hRate * hRate + wRate * wRate));
+    float h = hRate * diaLen/sqrt((hRate * hRate + wRate * wRate));
+    cout << int(h) << " " << int(w);
+    return 0;
+}
+
