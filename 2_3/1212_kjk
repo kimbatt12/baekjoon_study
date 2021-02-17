@@ -1,0 +1,42 @@
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string input, output = "";
+    cin >> input;
+    for (int i = input.length(); i >0;)
+    {
+        i--;
+        char tmp = input[i];
+        int num = atoi(&tmp);
+        output += '0' + num % 2;
+        num /= 2;
+        output += '0' + num % 2;
+        num /= 2;
+        output += '0' + num % 2;
+        num /= 2;
+    }
+    int len = output.length();
+    for (int i = output.length(); i > 0;)
+    {
+        i--;
+        if (output[i] == '0')
+            len--;
+        else
+            break;
+    }
+    if (!len)
+        cout << 0;
+    else
+    {
+        for (int i = len; i > 0;)
+        {
+            i--;
+            cout << output[i];
+        }
+    }
+}
+
